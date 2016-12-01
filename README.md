@@ -28,22 +28,33 @@ const slider = new Slider({
 
 # API
 
-<a name="Slider"></a>
+<a name="module_gui-components"></a>
 
-## Slider
+## gui-components
+
+* [gui-components](#module_gui-components)
+    * [~Slider](#module_gui-components..Slider)
+        * [new Slider(options, [optionsshowHandle], [optionshandleSize], [optionshandleColor])](#new_module_gui-components..Slider_new)
+        * [.value](#module_gui-components..Slider+value) : <code>Number</code>
+        * [.reset()](#module_gui-components..Slider+reset)
+        * [.resize(width, height)](#module_gui-components..Slider+resize)
+
+<a name="module_gui-components..Slider"></a>
+
+### gui-components~Slider
 Versatile canvas based slider.
 
-**Kind**: global class  
+**Kind**: inner class of <code>[gui-components](#module_gui-components)</code>  
 
-* [Slider](#Slider)
-    * [new Slider(options, [optionsshowHandle], [optionshandleSize], [optionshandleColor])](#new_Slider_new)
-    * [.value](#Slider+value) : <code>Number</code>
-    * [.reset()](#Slider+reset)
-    * [.resize(width, height)](#Slider+resize)
+* [~Slider](#module_gui-components..Slider)
+    * [new Slider(options, [optionsshowHandle], [optionshandleSize], [optionshandleColor])](#new_module_gui-components..Slider_new)
+    * [.value](#module_gui-components..Slider+value) : <code>Number</code>
+    * [.reset()](#module_gui-components..Slider+reset)
+    * [.resize(width, height)](#module_gui-components..Slider+resize)
 
-<a name="new_Slider_new"></a>
+<a name="new_module_gui-components..Slider_new"></a>
 
-### new Slider(options, [optionsshowHandle], [optionshandleSize], [optionshandleColor])
+#### new Slider(options, [optionsshowHandle], [optionshandleSize], [optionshandleColor])
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -77,24 +88,24 @@ const slider = new Slider({
   callback: (value) => console.log(value),
 });
 ```
-<a name="Slider+value"></a>
+<a name="module_gui-components..Slider+value"></a>
 
-### slider.value : <code>Number</code>
+#### slider.value : <code>Number</code>
 Current value of the slider.
 
-**Kind**: instance property of <code>[Slider](#Slider)</code>  
-<a name="Slider+reset"></a>
+**Kind**: instance property of <code>[Slider](#module_gui-components..Slider)</code>  
+<a name="module_gui-components..Slider+reset"></a>
 
-### slider.reset()
+#### slider.reset()
 Reset the slider to its default value.
 
-**Kind**: instance method of <code>[Slider](#Slider)</code>  
-<a name="Slider+resize"></a>
+**Kind**: instance method of <code>[Slider](#module_gui-components..Slider)</code>  
+<a name="module_gui-components..Slider+resize"></a>
 
-### slider.resize(width, height)
+#### slider.resize(width, height)
 Resize the slider.
 
-**Kind**: instance method of <code>[Slider](#Slider)</code>  
+**Kind**: instance method of <code>[Slider](#module_gui-components..Slider)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |

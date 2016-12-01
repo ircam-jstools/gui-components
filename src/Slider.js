@@ -23,6 +23,10 @@ function getClipper(min, max, step) {
 }
 
 /**
+ * @module gui-components
+ */
+
+/**
  * Versatile canvas based slider.
  *
  * @param {Object} options - Override default parameters.
