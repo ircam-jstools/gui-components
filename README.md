@@ -34,7 +34,7 @@ const slider = new Slider({
 
 * [gui-components](#module_gui-components)
     * [~Slider](#module_gui-components..Slider)
-        * [new Slider(options, [optionsshowHandle], [optionshandleSize], [optionshandleColor])](#new_module_gui-components..Slider_new)
+        * [new Slider(options)](#new_module_gui-components..Slider_new)
         * [.value](#module_gui-components..Slider+value) : <code>Number</code>
         * [.reset()](#module_gui-components..Slider+reset)
         * [.resize(width, height)](#module_gui-components..Slider+resize)
@@ -47,14 +47,14 @@ Versatile canvas based slider.
 **Kind**: inner class of <code>[gui-components](#module_gui-components)</code>  
 
 * [~Slider](#module_gui-components..Slider)
-    * [new Slider(options, [optionsshowHandle], [optionshandleSize], [optionshandleColor])](#new_module_gui-components..Slider_new)
+    * [new Slider(options)](#new_module_gui-components..Slider_new)
     * [.value](#module_gui-components..Slider+value) : <code>Number</code>
     * [.reset()](#module_gui-components..Slider+reset)
     * [.resize(width, height)](#module_gui-components..Slider+resize)
 
 <a name="new_module_gui-components..Slider_new"></a>
 
-#### new Slider(options, [optionsshowHandle], [optionshandleSize], [optionshandleColor])
+#### new Slider(options)
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -72,9 +72,9 @@ Versatile canvas based slider.
 | [options.foregroundColor] | <code>String</code> | <code>&#x27;steelblue&#x27;</code> | Foreground color of  the slider. |
 | [options.orientation] | <code>&#x27;horizontal&#x27;</code> &#124; <code>&#x27;vertical&#x27;</code> | <code>&#x27;horizontal&#x27;</code> | Orientation of the slider. |
 | [options.markers] | <code>Array</code> | <code>[]</code> | List of values where markers should  be displayed on the slider. |
-| [optionsshowHandle] | <code>Boolean</code> | <code>true</code> | In 'handle' mode, define if the  draggable should be show or not. |
-| [optionshandleSize] | <code>Number</code> | <code>20</code> | Size of the draggable zone. |
-| [optionshandleColor] | <code>String</code> | <code>&#x27;rgba(255, 255, 255, 0.7)&#x27;</code> | Color of the  draggable zone (when `showHandle` is `true`). |
+| [options.showHandle] | <code>Boolean</code> | <code>true</code> | In 'handle' mode, define if the  draggable should be show or not. |
+| [options.handleSize] | <code>Number</code> | <code>20</code> | Size of the draggable zone. |
+| [options.handleColor] | <code>String</code> | <code>&#x27;rgba(255, 255, 255, 0.7)&#x27;</code> | Color of the  draggable zone (when `showHandle` is `true`). |
 
 **Example**  
 ```js

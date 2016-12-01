@@ -53,10 +53,10 @@ function getClipper(min, max, step) {
  *  Orientation of the slider.
  * @param {Array} [options.markers=[]] - List of values where markers should
  *  be displayed on the slider.
- * @param {Boolean} [optionsshowHandle=true] - In 'handle' mode, define if the
+ * @param {Boolean} [options.showHandle=true] - In 'handle' mode, define if the
  *  draggable should be show or not.
- * @param {Number} [optionshandleSize=20] - Size of the draggable zone.
- * @param {String} [optionshandleColor='rgba(255, 255, 255, 0.7)'] - Color of the
+ * @param {Number} [options.handleSize=20] - Size of the draggable zone.
+ * @param {String} [options.handleColor='rgba(255, 255, 255, 0.7)'] - Color of the
  *  draggable zone (when `showHandle` is `true`).
  *
  * @example
