@@ -26,13 +26,13 @@ function getClipper(min, max, step) {
  * Versatile canvas based slider.
  *
  * @param {Object} options - Override default parameters.
- * @param {'jump'|'proportionnal'|'handle'} - Mode of the slider:
+ * @param {'jump'|'proportionnal'|'handle'} [options.mode] - Mode of the slider:
  *  - in 'jump' mode, the value is changed on 'touchstart' or 'mousedown', and
  *    on move.
  *  - in 'proportionnal' mode, the value is updated relatively to move.
  *  - in 'handle' mode, the slider can be grabbed only around its value.
- * @param {Function} callback - Callback to be executed when the value of the
- *  slider changes.
+ * @param {Function} [options.callback] - Callback to be executed when the value
+ *  of the slider changes.
  * @param {Number} [options.width=200] - Width of the slider.
  * @param {Number} [options.height=30] - Height of the slider.
  * @param {Number} [options.min=0] - Minimum value.
@@ -49,10 +49,10 @@ function getClipper(min, max, step) {
  *  Orientation of the slider.
  * @param {Array} [options.markers=[]] - List of values where markers should
  *  be displayed on the slider.
- * @param {Boolean} [showHandle=true] - In 'handle' mode, define if the
+ * @param {Boolean} [optionsshowHandle=true] - In 'handle' mode, define if the
  *  draggable should be show or not.
- * @param {Number} [handleSize=20] - Size of the draggable zone.
- * @param {String} [handleColor='rgba(255, 255, 255, 0.7)'] - Color of the
+ * @param {Number} [optionshandleSize=20] - Size of the draggable zone.
+ * @param {String} [optionshandleColor='rgba(255, 255, 255, 0.7)'] - Color of the
  *  draggable zone (when `showHandle` is `true`).
  *
  * @example
