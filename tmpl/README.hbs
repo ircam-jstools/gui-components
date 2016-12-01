@@ -1,0 +1,36 @@
+# GUI-Components
+
+> Set of simple gui components (to be extended)
+
+## Install
+
+```
+npm install [--save] ircam-jstools/gui-components
+```
+
+## Available Components
+
+- Slider - [example](https://cdn.rawgit.com/ircam-jstools/gui-components/master/examples/slider/index.html)
+
+## Usage
+
+```js
+import { Slider} from 'gui-components';
+
+const slider = new Slider({
+  mode: 'jump',
+  container: '#container',
+  default: 0.6,
+  markers: [0.5],
+  callback: (value) => console.log(value),
+});
+```
+
+# API
+
+{{#globals}}{{>docs}}{{/globals}}
+
+## License
+
+BSD-3-Clause
+

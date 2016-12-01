@@ -1,0 +1,21 @@
+html {
+  font-size: 62.5%;
+  font-family: arial;
+  background-color: #242424;
+  color: #ffffff;
+}
+
+body {
+  margin: 20px;
+}
+
+.slider {
+  padding: 10px;
+  margin: 12px;
+}
+
+.feedback {
+  padding: 10px;
+  margin: 12px;
+  font-size: 2rem;
+}
