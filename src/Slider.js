@@ -26,7 +26,7 @@ function getClipper(min, max, step) {
  * Versatile canvas based slider.
  *
  * @param {Object} options - Override default parameters.
- * @param {'jump'|'proportionnal'|'handle'} [options.mode] - Mode of the slider:
+ * @param {'jump'|'proportionnal'|'handle'} [options.mode='jump'] - Mode of the slider:
  *  - in 'jump' mode, the value is changed on 'touchstart' or 'mousedown', and
  *    on move.
  *  - in 'proportionnal' mode, the value is updated relatively to move.

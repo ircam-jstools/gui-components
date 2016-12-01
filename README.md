@@ -48,7 +48,7 @@ Versatile canvas based slider.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | options | <code>Object</code> |  | Override default parameters. |
-| [options.mode] | <code>&#x27;jump&#x27;</code> &#124; <code>&#x27;proportionnal&#x27;</code> &#124; <code>&#x27;handle&#x27;</code> |  | Mode of the slider:  - in 'jump' mode, the value is changed on 'touchstart' or 'mousedown', and    on move.  - in 'proportionnal' mode, the value is updated relatively to move.  - in 'handle' mode, the slider can be grabbed only around its value. |
+| [options.mode] | <code>&#x27;jump&#x27;</code> &#124; <code>&#x27;proportionnal&#x27;</code> &#124; <code>&#x27;handle&#x27;</code> | <code>&#x27;jump&#x27;</code> | Mode of the slider:  - in 'jump' mode, the value is changed on 'touchstart' or 'mousedown', and    on move.  - in 'proportionnal' mode, the value is updated relatively to move.  - in 'handle' mode, the slider can be grabbed only around its value. |
 | [options.callback] | <code>function</code> |  | Callback to be executed when the value  of the slider changes. |
 | [options.width] | <code>Number</code> | <code>200</code> | Width of the slider. |
 | [options.height] | <code>Number</code> | <code>30</code> | Height of the slider. |
