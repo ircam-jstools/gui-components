@@ -122,7 +122,7 @@ class Slider {
     this._setScales();
     this._bindEvents();
     this._onResize();
-    this._updateValue(this.params.default);
+    this._updateValue(this.params.default, false, true);
 
     window.addEventListener('resize', this._onResize);
   }
@@ -160,10 +160,10 @@ class Slider {
     this._resizeElement();
     this._setScales();
     this._onResize();
-    this._updateValue(this._value, true);
+    this._updateValue(this._value, true, true);
   }
 
-  _updateValue(value, forceRender = false) {
+  _updateValue(value, forceRender = false, silent = false) {
     const { callback } = this.params;
     const clippedValue = this.clipper(value);
 
@@ -174,7 +174,10 @@ class Slider {
     // trigger callback
     if (clippedValue !== this._value) {
       this._value = clippedValue;
-      callback(clippedValue);
+
+      if (!silent)
+        callback(clippedValue);
+
       requestAnimationFrame(() => this._render(clippedValue));
     }
   }
