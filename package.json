@@ -1,6 +1,6 @@
 {
   "name": "gui-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Set of simple GUI components",
   "main": "dist/index.js",
   "author": "Benjamin Matuszewski",
