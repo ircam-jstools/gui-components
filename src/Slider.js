@@ -137,7 +137,8 @@ class Slider {
   }
 
   set value(val) {
-    this._updateValue(val);
+    // don't trigger the callback when value is set from outside
+    this._updateValue(val, true, false);
   }
 
   /**
@@ -167,7 +168,7 @@ class Slider {
     const { callback } = this.params;
     const clippedValue = this.clipper(value);
 
-    // if resize render but don't trigger callback
+    // resize render but don't trigger callback
     if (clippedValue === this._value && forceRender === true)
       requestAnimationFrame(() => this._render(clippedValue));
 
