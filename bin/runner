@@ -4,6 +4,7 @@ var watch = require('watch');
 var path = require('path');
 var pkg = require('../package.json');
 var util = require('util');
+var klaw = require('klaw');
 
 var javascripts = require('./javascripts');
 var cwd = process.cwd();
@@ -82,7 +83,7 @@ function isAllowed(filename, ensureFile) {
 function _getFileList(folder, callback) {
   var files = [];
 
-  fse.walk(folder)
+  klaw(folder)
     .on('data', function(item) {
       if (item.stats.isFile() && isAllowed(item.path))
         files.push(item.path);
