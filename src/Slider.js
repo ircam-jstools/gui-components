@@ -138,7 +138,7 @@ class Slider {
 
   set value(val) {
     // don't trigger the callback when value is set from outside
-    this._updateValue(val, true, false);
+    this._updateValue(val, true, true);
   }
 
   /**
