@@ -19,6 +19,19 @@ const sliderJump = new Slider({
   callback: (val) => $feedbackJump.textContent = val,
 });
 
+// make sure callback is not triggered when updating manually
+setTimeout(() => {
+  const oldCallback = sliderJump.params.callback;
+  const testValue = 1;
+  sliderJump.params.callback = (value) => {
+    if (value == testValue)
+      throw new Error('`slider.value = newValue` should be silent');
+  }
+
+  sliderJump.value = testValue;
+  sliderJump.params.callback = oldCallback;
+}, 500);
+
 // proportionnal
 const $feedbackProportionnal = document.querySelector('#feedback-proportionnal');
 
