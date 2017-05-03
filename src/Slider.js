@@ -122,7 +122,7 @@ class Slider {
     this._setScales();
     this._bindEvents();
     this._onResize();
-    this._updateValue(this.params.default, false, true);
+    this._updateValue(this.params.default, true, true);
 
     window.addEventListener('resize', this._onResize);
   }
@@ -138,7 +138,7 @@ class Slider {
 
   set value(val) {
     // don't trigger the callback when value is set from outside
-    this._updateValue(val, true, true);
+    this._updateValue(val, true, false);
   }
 
   /**
@@ -164,7 +164,7 @@ class Slider {
     this._updateValue(this._value, true, true);
   }
 
-  _updateValue(value, forceRender = false, silent = false) {
+  _updateValue(value, silent = false, forceRender = false) {
     const { callback } = this.params;
     const clippedValue = this.clipper(value);
 
@@ -396,7 +396,7 @@ class Slider {
     const position = orientation === 'horizontal' ? x : y;
     const value = this.screenScale.invert(position);
 
-    this._updateValue(value);
+    this._updateValue(value, false, true);
   }
 
   _render(clippedValue) {
