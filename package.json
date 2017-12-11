@@ -1,5 +1,5 @@
 {
-  "name": "gui-components",
+  "name": "@ircam/gui-components",
   "version": "1.0.1",
   "description": "Set of simple GUI components",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "deploy": "np",
     "doc": "jsdoc2md -t tmpl/README.hbs src/*.js > README.md",
     "transpile": "node ./bin/runner --transpile",
-    "version": "npm run transpile && npm run doc && git add docs",
+    "version": "npm run transpile && npm run doc && git add README.md",
     "prewatch": "npm run transpile",
     "watch": "node ./bin/runner --watch"
   },

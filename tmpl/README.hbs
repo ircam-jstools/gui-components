@@ -5,7 +5,7 @@
 ## Install
 
 ```
-npm install [--save] ircam-jstools/gui-components
+npm install [--save] @ircam/gui-components
 ```
 
 ## Available Components

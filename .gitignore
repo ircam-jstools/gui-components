@@ -3,3 +3,6 @@ Thumb.db
 
 node_modules
 dist
+
+*.umd.js
+*.min.js
