@@ -6,6 +6,9 @@
   "author": "Benjamin Matuszewski",
   "license": "BSD-3-Clause",
   "standalone": "guiComponents",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "bundle": "node ./bin/runner --bundle",
     "deploy": "np --yolo",
