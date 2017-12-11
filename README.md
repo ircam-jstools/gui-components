@@ -5,7 +5,7 @@
 ## Install
 
 ```
-npm install [--save] ircam-jstools/gui-components
+npm install [--save] @ircam/gui-components
 ```
 
 ## Available Components
@@ -15,7 +15,7 @@ npm install [--save] ircam-jstools/gui-components
 ## Usage
 
 ```js
-import { Slider} from 'gui-components';
+import { Slider} from '@ircam/gui-components';
 
 const slider = new Slider({
   mode: 'jump',
