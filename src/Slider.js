@@ -94,7 +94,6 @@ class Slider {
     };
 
     this.params = Object.assign({}, defaults, options);
-    this._listeners = [];
     this._boundingClientRect = null;
     this._touchId = null;
     this._value = null;
