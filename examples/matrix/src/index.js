@@ -5,20 +5,30 @@ const numSteps = 16;
 const tempo = 240;
 const period = 60 / tempo;
 
+const $container = document.querySelector('#container');
+const width = $container.getBoundingClientRect().width;
+
 const displayBeatMatrix = new Matrix({
-  container: '#container',
+  container: $container,
   numCols: numSteps,
   numRows: 1,
-  width: 400,
+  width: width,
   height: 10,
 });
 
 const controlMatrix = new Matrix({
-  container: '#container',
+  container: $container,
   numCols: numSteps,
   numRows: 24,
-  width: 400,
+  width: width,
   height: 300,
+});
+
+window.addEventListener('resize', () => {
+  const width = $container.getBoundingClientRect().width;
+
+  displayBeatMatrix.resize(width, null);
+  controlMatrix.resize(width, null);
 });
 
 const audioContext = new AudioContext();
@@ -86,3 +96,8 @@ const displayBeatEngine = new DisplayBeatEngine(period);
 const gridEngine = new GridEngine(period, controlMatrix.value);
 scheduler.add(displayBeatEngine);
 scheduler.add(gridEngine);
+
+const $reset = document.querySelector('#reset');
+$reset.addEventListener('click', () => controlMatrix.reset());
+
+

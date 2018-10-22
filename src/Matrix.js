@@ -15,7 +15,7 @@ class Matrix extends BaseComponent {
       numRows: 4,
       width: 400,
       height: 400,
-      trigger: 'touch', // 'aftertouch'
+      // trigger: 'touch', // 'aftertouch'
     }
 
     this.params = Object.assign({}, defaults, options);
@@ -55,6 +55,8 @@ class Matrix extends BaseComponent {
 
   setParameter(name, value) {
     // ...
+    if (this.params[name])
+      this.params[name] = value;
   }
 
   reset() {
@@ -70,25 +72,16 @@ class Matrix extends BaseComponent {
     this._render();
   }
 
-  resize() {
-
-  }
-
-  _resize(width, height) {
-    const { container, numCols, numRows } = this.params;
-
-    const cellWidth = width / numCols;
-    const cellHeight = height / numRows;
-
-    for (let x = 0; x < numCols; x++) {
-      for (let y = 0; y < numRows; y++) {
-        const $cell = this._$cells[x][y];
-        $cell.setAttribute('width', cellWidth);
-        $cell.setAttribute('height', cellHeight);
-        $cell.setAttribute('x', cellWidth * x);
-        $cell.setAttribute('y', cellHeight * y);
-      }
+  resize(width = null, height = null) {
+    if (width !== null) {
+      this.params.width = width;
     }
+
+    if (height !== null) {
+      this.params.height = height;
+    }
+
+    this._resizeElement();
   }
 
   _createValue() {
@@ -136,13 +129,11 @@ class Matrix extends BaseComponent {
   }
 
   _createElement() {
-    const { container, numCols, numRows, width, height } = this.params;
+    const { container, numCols, numRows } = this.params;
     this._$svg = document.createElementNS(ns, 'svg');
     this._$svg.setAttributeNS(null, 'shape-rendering', 'optimizeSpeed');
     this._$svg.setAttribute('xmlns:xhtml', 'http://www.w3.org/1999/xhtml');
 
-    this._$svg.style.width = `${width}px`;
-    this._$svg.style.height = `${height}px`;
     this._$cells = [];
 
     for (let x = 0; x < numCols; x++) {
@@ -162,12 +153,38 @@ class Matrix extends BaseComponent {
       this._$cells[x] = $coll;
     }
 
-    this._resize(width, height);
+    this._resizeElement();
 
-    const $container = document.querySelector(container);
+    let $container;
+    if (container instanceof Element) {
+      $container = container;
+    } else {
+      $container = document.querySelector(container);
+    }
+
     $container.appendChild(this._$svg);
 
     this._$svg.addEventListener('mousedown', this._onMouseDown);
+  }
+
+  _resizeElement() {
+    const { numCols, numRows, width, height } = this.params;
+
+    this._$svg.style.width = `${width}px`;
+    this._$svg.style.height = `${height}px`;
+
+    const cellWidth = width / numCols;
+    const cellHeight = height / numRows;
+
+    for (let x = 0; x < numCols; x++) {
+      for (let y = 0; y < numRows; y++) {
+        const $cell = this._$cells[x][y];
+        $cell.setAttribute('width', cellWidth);
+        $cell.setAttribute('height', cellHeight);
+        $cell.setAttribute('x', cellWidth * x);
+        $cell.setAttribute('y', cellHeight * y);
+      }
+    }
   }
 
   _render() {

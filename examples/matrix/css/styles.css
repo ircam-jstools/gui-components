@@ -7,6 +7,6 @@ body {
   margin: 20px;
 }
 
-canvas {
-  outline: 1px solid #565656;
+#container{
+  width: 30%;
 }
