@@ -392,7 +392,7 @@ class Slider {
       window.removeEventListener('touchend', this._onTouchEnd);
       window.removeEventListener('touchcancel', this._onTouchEnd);
       // re-enable touchstart
-      this.$canvas.addEventListener('touchstart', this._onTouchStart);
+      this.$canvas.addEventListener('touchstart', this._onTouchStart, { passive: false });
     }
   }
 
