@@ -1,4 +1,4 @@
-import { Slider } from '../../../dist/index';
+import { Slider } from '@ircam/gui-components';
 
 // jump
 const $feedbackJump = document.querySelector('#feedback-jump');

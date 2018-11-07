@@ -311,6 +311,8 @@ class Slider {
 
   // mouse events
   _onMouseDown(e) {
+    e.preventDefault();
+
     const pageX = e.pageX;
     const pageY = e.pageY;
     const x = pageX - this._boundingClientRect.left;
@@ -342,19 +344,22 @@ class Slider {
 
   // touch events
   _onTouchStart(e) {
-    if (this._touchId !== null) return;
+    e.preventDefault();
+
+    if (this._touchId !== null) {
+      return;
+    }
 
     // consider the last touch of the list, as another touch might have
     // occured somewhere else on the screen
     const touch = e.touches[e.touches.length - 1];
-    this._touchId = touch.identifier;
-
     const pageX = touch.pageX;
     const pageY = touch.pageY;
     const x = pageX - this._boundingClientRect.left;
     const y = pageY - this._boundingClientRect.top;
 
     if (this._onStart(x, y) === true) {
+      this._touchId = touch.identifier;
       // disable touchstart
       this.$canvas.removeEventListener('touchstart', this._onTouchStart);
 
@@ -365,12 +370,12 @@ class Slider {
   }
 
   _onTouchMove(e) {
-    e.preventDefault(); // prevent text selection
-
     const touches = Array.from(e.touches);
     const touch = touches.filter(t => t.identifier === this._touchId)[0];
 
     if (touch) {
+      e.preventDefault(); // prevent text selection
+
       const pageX = touch.pageX;
       const pageY = touch.pageY;
       const x = pageX - this._boundingClientRect.left;

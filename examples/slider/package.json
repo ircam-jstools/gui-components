@@ -14,6 +14,7 @@
     "postinstall": "npm run bundle"
   },
   "dependencies": {
+    "@ircam/gui-components": "^1.0.5",
     "babel-runtime": "^6.9.2"
   },
   "devDependencies": {

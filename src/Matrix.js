@@ -32,23 +32,39 @@ class Matrix extends BaseComponent {
     this._render();
   }
 
-  get value() {
+  get values() {
     return this._values;
   }
 
-  // maybe should work as reference
-  set value(value) {
-    this._values = _values;
-  }
+  // set values(values) {
+  //   this._values = values;
 
-  setCellValue(x, y, value) {
-    this._values[x][y] = value;
-    // dispatch value
-    this.params.callback(this._values);
+  //   this.params.callback(this._values);
+  //   this._render();
+  // }
+
+  setValues(values, { silent = false } = {}) {
+    this._values = values;
+
+    if (silent === false) {
+      this.params.callback(this._values);
+    }
+
     this._render();
   }
 
-  toggleCell(x, y) {
+  setCellValue(x, y, value, { silent = false } = {}) {
+    this._values[x][y] = value;
+    // dispatch value
+
+    if (silent === false) {
+      this.params.callback(this._values);
+    }
+
+    this._render();
+  }
+
+  toggleCell(x, y, { silent = false } = {}) {
     const value = this._values[x][y];
     this.setCellValue(x, y, 1 - value);
   }
