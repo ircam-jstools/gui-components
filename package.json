@@ -1,6 +1,6 @@
 {
   "name": "@ircam/gui-components",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Set of simple GUI components",
   "main": "dist/index.js",
   "author": "Benjamin Matuszewski",
